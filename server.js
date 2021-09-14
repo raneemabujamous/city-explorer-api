@@ -15,11 +15,11 @@ app.get('/weather', (req, res) => {
     let lat = Number(req.query.lat);
     let lon  = Number(req.query.lon);
     
-    let result 
+    let result ;
     if(lat && lon){
 
        result =   weatherData.find(element=>element.lat === lat && element.lon === lon)
-        console.log(result)
+        // console.log(result ,"dewd")
 
   let forcase = result.data.map(item =>{
    return(
@@ -27,7 +27,7 @@ app.get('/weather', (req, res) => {
    )
       
   })
-  console.log(forcase)
+  console.log(forcase,'rrrrrrr')
   res.status(200).json(forcase)
     }else{
        res.status(400).send('error 404')
